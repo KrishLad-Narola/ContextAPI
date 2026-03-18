@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import UserContext from '../context/UserContext'
 import { z } from 'zod'
+import { SiSimplelogin } from "react-icons/si";
+
 
 
 const loginValidation = z.object({
@@ -39,7 +41,7 @@ function Login() {
 // console.log(username,password);
   return (
     <form className="max-w-sm mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h1 className="text-3xl mb-4 text-blue-500 text-center">LOGIN➜</h1>
+      <h1 className="text-3xl mb-4 text-blue-500 text-center">LOGIN<SiSimplelogin /></h1>
 
       <div className="mb-4">
         <input
