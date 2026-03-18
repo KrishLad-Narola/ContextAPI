@@ -69,7 +69,7 @@ function Login() {
           <p className="text-red-500 text-sm mt-1">{errors.password}</p>
         )}
       </div>
-      <button className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={handleSubmit} >Submit</button>
+      <button className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={handleSubmit} >Login</button>
       {/* <p id="error-msg" style="color:red; display:none;">Invalid Username or Password</p> */}
 
     </form>
