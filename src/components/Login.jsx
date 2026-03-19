@@ -10,7 +10,7 @@ const loginValidation = z.object({
     .max(20, 'Password must be under 20 characters')
 });
 
-function Login() {
+function Login({ goToRegister }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -26,8 +26,8 @@ function Login() {
 
     if (!result.success) {
       const ResultError = {};
-   
-       // In previous code i can use Errors as issues on each errors 
+
+      // In previous code i can use Errors as issues on each errors 
       result.error.issues.forEach((err) => {
         const field = err.path[0];
         ResultError[field] = err.message;
@@ -51,7 +51,7 @@ function Login() {
   return (
     <div
       className="min-h-screen w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4"
-      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')`}} >
+      style={{ backgroundImage: `url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')` }} >
       <h1 className='text-3xl mb-2'>React with Context-API</h1>
 
       <form className="w-full max-w-sm p-8 bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl" onSubmit={handleSubmit}>
@@ -104,6 +104,16 @@ function Login() {
           className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-all">
           Sign In
         </button>
+
+        <p className="text-sm text-center mt-4 text-gray-700">
+          Don't have an account?{" "}
+          <span
+            className="text-orange-600 cursor-pointer font-semibold"
+            onClick={goToRegister}
+          >
+            Register
+          </span>
+        </p>
       </form>
     </div>
   );
