@@ -3,6 +3,7 @@ import UserContext from '../context/UserContext';
 import { z } from 'zod';
 import { SiSimplelogin } from "react-icons/si";
 
+
 const loginValidation = z.object({
   username: z.string().min(3, 'Username must be at least 3 characters'),
   password: z.string()
@@ -45,14 +46,14 @@ function Login({ goToRegister }) {
       password: password.trim()
     });
 
-    console.log("Logged in successfully!");
+    console.log("Logged in successfully!" , username , password);
   };
 
   return (
     <div
       className="min-h-screen w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4"
       style={{ backgroundImage: `url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')` }} >
-      <h1 className='text-3xl mb-2'>React with Context-API</h1>
+      
 
       <form className="w-full max-w-sm p-8 bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl" onSubmit={handleSubmit}>
         <div className="flex flex-col items-center mb-6">

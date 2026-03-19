@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { registerSchema } from "../utils/validationSchema";
+import { CgLivePhoto } from "react-icons/cg";
 
-const Register = ({ goToLogin }) => {
+const Register = ({ goToLogin}) => {
     const [formData, setFormData] = useState({
         firstName: "",
         email: "",
@@ -23,7 +24,7 @@ const Register = ({ goToLogin }) => {
             setErrors(formatted);
             return;
         }
-
+ 
         setErrors({});
         console.log("Registered:", formData);
 
@@ -33,15 +34,12 @@ const Register = ({ goToLogin }) => {
 
     return (
 
-        <div
-            className="min-h-screen flex justify-center items-center bg-cover bg-center"
-            style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8')",
-            }}
-        >
+        <div className="min-h-screen flex justify-center items-center bg-cover bg-center" style={{backgroundImage:"url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8')",}}>
             <form className="w-full max-w-sm p-8 bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl" onSubmit={handleSubmit}>
-                <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
+             <div className="bg-orange-500 p-3 rounded-full mb-2 shadow-lg text-white  flex items-center justify-center">
+                        <CgLivePhoto size={30} />
+                      </div>
+                <h2 className="text-2xl font-bold mb-4 text-center">Welcome </h2>
 
                 <div className="mb-4">
                     <label className="block text-gray-800 text-sm font-semibold mb-1"> FirstName </label>
@@ -82,8 +80,7 @@ const Register = ({ goToLogin }) => {
                     />
                     {errors.password && <p className="text-red-500">{errors.password}</p>}
                      </div>
-                    <button type="Register" className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-all" >
-                        Register</button>
+                    <button onSubmit={handleSubmit} type="Register" className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-all"  > Register</button>
 
                     <p className="text-sm text-center mt-3">
                         Already have an account?{" "}
