@@ -7,7 +7,6 @@ function App() {
 
   return (
     <UserContextProvider>
-      <h1 className='text-3xl mb-2 '>React with share Context-API</h1>
       <Login />
       <Profile />
     </UserContextProvider>
