@@ -107,12 +107,7 @@ function Login({ goToRegister }) {
 
         <p className="text-sm text-center mt-4 text-gray-700">
           Don't have an account?{" "}
-          <span
-            className="text-orange-600 cursor-pointer font-semibold"
-            onClick={goToRegister}
-          >
-            Register
-          </span>
+          <span className="text-orange-600 cursor-pointer font-semibold" onClick={goToRegister}> Register </span>
         </p>
       </form>
     </div>
