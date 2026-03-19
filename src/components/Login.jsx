@@ -26,7 +26,8 @@ function Login() {
 
     if (!result.success) {
       const ResultError = {};
-
+   
+       
       result.error.issues.forEach((err) => {
         const field = err.path[0];
         ResultError[field] = err.message;
@@ -46,7 +47,7 @@ function Login() {
 
     console.log("Logged in successfully!");
   };
-  
+
   return (
     <div
       className="min-h-screen w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4"
