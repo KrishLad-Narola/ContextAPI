@@ -32,6 +32,7 @@ const Register = ({ goToLogin }) => {
   };
 
   return (
+    
     <div
       className="min-h-screen flex justify-center items-center bg-cover bg-center"
       style={{
@@ -39,7 +40,7 @@ const Register = ({ goToLogin }) => {
           "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8')",
       }}
     >
-      <form className="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-xl w-80">
+      <form className="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-xl w-80" onSubmit={handleSubmit}>
         <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
 
         <input
