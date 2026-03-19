@@ -27,7 +27,7 @@ function Login() {
     if (!result.success) {
       const ResultError = {};
    
-       
+       // In previous code i can use Errors as issues on each errors 
       result.error.issues.forEach((err) => {
         const field = err.path[0];
         ResultError[field] = err.message;
