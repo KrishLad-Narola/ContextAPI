@@ -17,22 +17,23 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   setUser({ username, password });
+   console.log("Logged in successfully!");
+
     const result = loginValidation.safeParse({ username, password });
 
     if (!result.success) {
       const ResultErrors = {};
       result.error.errors.forEach(err => {
-        // Corrected index to use the field name (e.g., 'username')
-        ResultErrors[err.path[0]] = err.message;
+          ResultErrors[err.path[0]] = err.message;
       });
       setErrors(ResultErrors);
       return;
     }
 
     setErrors({});
-    setUser({ username, password });
-    console.log("Logged in successfully!");
   };
+
 
   return (
     <div
@@ -45,7 +46,7 @@ function Login() {
           <div className="bg-orange-500 p-3 rounded-full mb-2 shadow-lg text-white">
             <SiSimplelogin size={30} />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 tracking-tight">Welcome Back</h1>
+          <h1 className="text-3xl font-bold text-gray-800 tracking-tight">LogIn</h1>
           <p className="text-gray-700 text-sm">please login</p>
         </div>
         <div className="mb-4">
