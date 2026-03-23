@@ -43,14 +43,18 @@ export const Contact = () => {
 
   return (
      <div
-      className="min-h-[90VH] w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4"
+      className="min-h-[90VH] w-full flex gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4"
       // style={{
       //   backgroundImage:
       //     "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')",
       // }} >
       >
+            <div className="">
+      <img src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg?semt=ais_hybrid&w=740&q=80" />
+
+    </div>
     <form onSubmit={handleContactSubmit}
-      className="w-full max-w-sm p-8 bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl">
+      className="w-full max-w-sm p-8 bg-white/30 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl mb-10 ">
 
       <div className="flex flex-col items-center mb-6">
         <div className="bg-orange-500 p-3 rounded-full mb-2 shadow-lg text-white">
@@ -112,6 +116,7 @@ export const Contact = () => {
 
             </div>
     </form>
+
     </div>
   );
 };

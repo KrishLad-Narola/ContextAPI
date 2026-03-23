@@ -1,6 +1,6 @@
 // import { useContext } from "react";
 // import UserContext from "../context/UserContext";
-import { HeroSection } from "../components/Herosection";
+import { HeroSection } from "../components/HeroSection";
 
 const Home = () => {
   // const { user } = useContext(UserContext);
