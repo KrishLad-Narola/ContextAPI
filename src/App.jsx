@@ -9,21 +9,24 @@ import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Applayout from "./Layout/Applayout";
+import CardList from "./components/cardlist";
 
 function App() {
   return (
     <UserContextProvider>
       <BrowserRouter>
         <Header />
-
         <Routes>
+          <Route element={<Applayout />} />
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/list" element={<CardList />} />
         </Routes>
-
+        {/* <CardList /> */}
         <Footer />
       </BrowserRouter>
     </UserContextProvider>
