@@ -12,7 +12,7 @@ const PostList = () => {
             try {
                 const response = await fetch("https://jsonplaceholder.typicode.com/comments");
                 if (!response.ok) throw new Error(`Status: ${response.status}`);
-                
+                            
                 const result = await response.json();
                 setData(result);
                 setCommentCount(result.length); 
@@ -33,7 +33,7 @@ const PostList = () => {
           
             <div className="mb-4 p-4 bg-gray-300 rounded-lg">
                 <h2 className="text-xl font-bold">Comments Data</h2>
-                <p>Total Comments is :{data.length}</p>
+                <p>Total Comments is:{data.length}</p>
             </div>
 
             <div className="flex flex-wrap gap-4">

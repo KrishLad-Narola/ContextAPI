@@ -1,30 +1,46 @@
 
 import React, { useState, useEffect } from 'react';
 import Card from "./Card"
+import Post from './post';
 
 
 const CardList = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [post , setPost] = useState([]);
+    const [filter , setFilter] = useState('');
 
     useEffect(() => {
 
         const fetchCard = async () => {
             try {
-                const response = await fetch('https://jsonplaceholder.typicode.com/photos');
+
+                const postResponse = await fetch('https://jsonplaceholder.typicode.com/photos')
+                 if (!response.ok) throw new Error(`Status: ${response.status}`);
+                const data = await postResponse.json();
+
+                const commentResponse = await fetch('https://jsonplaceholder.typicode.com/comments')
+                 if (!response.ok) throw new Error(`Status: ${response.status}`);
+                const result = await commentResponse.json();
+
+                const combinedData = postsData.map(post => {
+                    const relatedComments = commentsData.filter(comment => comment.postId === post.id);
+                    return { ...post, comments: relatedComments };
+                });
                 if (!response.ok) {
                     throw new Error(`error status: ${response.status}`);
                 }
-                const result = await response.json();
                 setData(result);
                 setLoading(false);
-            } catch (err) { 
-                setError(err.message);
+                setPost(combinedData);
+            } catch (error) {
+                setError(error.message);
                 setLoading(false);
+                console.log("error fetching :" , error);
             }
         };
-
+         
         fetchCard();
     }, []);
 
