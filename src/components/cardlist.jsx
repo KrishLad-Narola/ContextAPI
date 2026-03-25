@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import Card from "./card";
+import Card from "./Card"
+
 
 const CardList = () => {
     const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ const CardList = () => {
                 const result = await response.json();
                 setData(result);
                 setLoading(false);
-            } catch (err) {
+            } catch (err) { 
                 setError(err.message);
                 setLoading(false);
             }

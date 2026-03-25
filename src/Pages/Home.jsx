@@ -21,7 +21,7 @@ const Home = () => {
         title=" Authentication"
         type="Authentication"
         banner
-        onClick={() => navigate("/PostAuthantication")}
+        onClick={() => navigate("/post-authentication")}
       />
 
       <br />
@@ -33,6 +33,17 @@ const Home = () => {
         banner
         onClick={() => navigate("/list")}
       />
+
+      <br />
+
+      <Alert
+        className="w-[50%] mx-auto mt-2 cursor-pointer bg-red-300 border border-red-400 text-black rounded-md shadow-md"
+        title=" Post-Management"
+        type="Post-Management"
+        banner
+        onClick={() => navigate("/PostList")}
+      />
+
     </div>
   );
 };

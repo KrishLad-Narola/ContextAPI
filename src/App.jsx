@@ -11,6 +11,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Applayout from "./Layout/Applayout";
 import CardList from "./components/cardlist";
+import PostList from "./components/PostList";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/list" element={<CardList />} />
+           <Route path="/PostList" element={<PostList />} />
         </Routes>
         {/* <CardList /> */}
         <Footer />
