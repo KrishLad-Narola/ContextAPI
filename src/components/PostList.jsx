@@ -2,51 +2,45 @@ import React, { useState, useEffect } from "react";
 import Post from "./post";
 
 const PostList = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([]); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [commentCount, setCommentCount] = useState([]);
+    const [commentCount , setCommentCount] = useState(0)
 
     useEffect(() => {
-
-        const FetchPostApi = async () => {
+        const FetchPostApiManagement = async () => {
             try {
                 const response = await fetch("https://jsonplaceholder.typicode.com/comments");
-                if (!response.ok) {
-                    throw new Error(`error status: ${response.status}`);
-                }
-
+                if (!response.ok) throw new Error(`Status: ${response.status}`);
+                
                 const result = await response.json();
-                setData(result);            
+                setData(result);
                 setCommentCount(result.length); 
                 setLoading(false);
-                
             } catch (err) {
                 setError(err.message);
                 setLoading(false);
             }
         };
-        FetchPostApi();
+        FetchPostApiManagement();
     }, []);
 
-    if (loading) {
-        return <div className="text-center p-4">Loading Data...</div>;
-    }
-
-    if (error) {
-        return (
-            <div className="text-center p-4 text-red-500">
-                Error: {error}
-            </div>
-        );
-    }
+    if (loading) return <div className="p-4">Loading...</div>;
+    if (error) return <div className="p-4 text-red-500">Error: {error}</div>;
 
     return (
-        <div className="flex flex-wrap justify-center">
-            {data.map((item) => (
-                <Post key={item.id} item={item} />
-            ))}
-            
+        <div className="p-6">
+          
+            <div className="mb-4 p-4 bg-gray-300 rounded-lg">
+                <h2 className="text-xl font-bold">Comments Data</h2>
+                <p>Total Comments is :{data.length}</p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+                {data.map((item) => (
+                    <Post key={item.id} item={item} />
+                ))}
+            </div>
         </div>
     );
 };
