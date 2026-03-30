@@ -1,0 +1,20 @@
+
+
+
+[
+  {
+    "icon": "MdPlace",
+    "title": "Find us",
+    "details": "Navsari , Gujarat"
+  },
+  {
+    "icon": "IoCallSharp",
+    "title": "Call us",
+    "details": "9408982003"
+  },
+  {
+    "icon": "TbMailPlus",
+    "title": "Mail us",
+    "details": "krishlad334@gamil.com"
+  }
+]
