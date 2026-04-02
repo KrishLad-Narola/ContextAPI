@@ -69,11 +69,11 @@ function Register() {
 
   return (
     <div
-      className="min-h-[90VH] w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4 "
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')",
-      }}
+      className="min-h-[100VH] w-full flex flex-col gap-10 items-center justify-center bg-cover bg-center bg-no-repeat p-4 "
+      // style={{
+      //   backgroundImage:
+      //     "url('https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=2070&auto=format&fit=crop')",
+      // }}
     >
 
       <form
@@ -84,7 +84,7 @@ function Register() {
           <div className="bg-orange-500 p-3 rounded-full mb-2 shadow-lg text-white">
             <SiSimplelogin size={30} />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800">Register</h1>
+          <h1 className="text-3xl  text-gray-800">Register</h1>
           <p className="text-gray-700 text-sm">Create your account</p>
         </div>
 
@@ -99,7 +99,7 @@ function Register() {
             value={formData.username}
             placeholder="Enter username"
             onChange={handleChange}
-            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200"
           />
           {errors.username && (
             <p className="text-red-600 text-xs mt-1">
@@ -119,7 +119,7 @@ function Register() {
             value={formData.email}
             placeholder="Enter email"
             onChange={handleChange}
-            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200"
           />
           {errors.email && (
             <p className="text-red-600 text-xs mt-1">
@@ -139,7 +139,7 @@ function Register() {
             value={formData.password}
             placeholder="Enter password"
             onChange={handleChange}
-            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            className="w-full p-2 bg-white/50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-200"
           />
           {errors.password && (
             <p className="text-red-600 text-xs mt-1">
@@ -151,7 +151,7 @@ function Register() {
         
         <button
           type="submit"
-          className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg active:scale-95 transition-all"
+          className="w-full py-3 bg-orange-500 hover:bg-orange-200 hover:text-orange-500 text-white  rounded-lg shadow-lg active:scale-95 transition-all"
         >
           Register
         </button>

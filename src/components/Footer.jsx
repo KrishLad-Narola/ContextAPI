@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#D97A2B] text-white mt-auto">
+    <footer className="bg-[#ff9248] text-white mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-center px-6 py-6 max-w-7xl mx-auto gap-6">
         {footerContact.map((curData, index) => {
           const { icon, title, details } = curData;
